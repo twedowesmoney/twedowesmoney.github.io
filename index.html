@@ -1,8 +1,7 @@
 <html>
-
 <head>
-	<script>
-		True_Timecalculator = new Object();
+<script>
+True_Timecalculator = new Object();
 
 		function leapyear(year) {
 			if (year % 4 == 0) {
@@ -81,116 +80,45 @@
 
 				if ((this.m_year >= 1582) || (this.m_concept == 1)) {
 					for (x = 1582; x < this.m_year; x++) {
-						if (leapyear(x)) {
-							this.m_datevalue += 366;
-						} else {
-							this.m_datevalue += 365;
-						}
-					}
-				} else {
-					alert(this.m_year + " This year is not valid: 1582 is the oldest year possible under the Gregorian calendar.");
-				}
+						if (leapyear(x)) {this.m_datevalue += 366;} 
+						else {this.m_datevalue += 365;}}}
 
 				for (x = 1; x < this.m_month; x++) {
 					provmonthlen = 0;
-					if (x == 1) {
-						provmonthlen = 31;
-					}
+					if (x == 1) {provmonthlen = 31;}
 					if (x == 2) {
-						if (leapyear(this.m_year)) {
-							provmonthlen = 29;
-						} else {
-							provmonthlen = 28;
-						}
-					}
-					if (x == 3) {
-						provmonthlen = 31;
-					}
-					if (x == 4) {
-						provmonthlen = 30;
-					}
-					if (x == 5) {
-						provmonthlen = 31;
-					}
-					if (x == 6) {
-						provmonthlen = 30;
-					}
-					if (x == 7) {
-						provmonthlen = 31;
-					}
-					if (x == 8) {
-						provmonthlen = 31;
-					}
-					if (x == 9) {
-						provmonthlen = 30;
-					}
-					if (x == 10) {
-						provmonthlen = 31;
-					}
-					if (x == 11) {
-						provmonthlen = 30;
-					}
-					if (x == 12) {
-						provmonthlen = 31;
-					}
-					this.m_datevalue += provmonthlen;
-				}
+						if (leapyear(this.m_year)) {provmonthlen = 29;} 
+						else {provmonthlen = 28;}}
+					if (x == 3) {provmonthlen = 31;}
+					if (x == 4) {provmonthlen = 30;}
+					if (x == 5) {provmonthlen = 31;}
+					if (x == 6) {provmonthlen = 30;}
+					if (x == 7) {provmonthlen = 31;}
+					if (x == 8) {provmonthlen = 31;}
+					if (x == 9) {provmonthlen = 30;}
+					if (x == 10) {provmonthlen = 31;}
+					if (x == 11) {provmonthlen = 30;}
+					if (x == 12) {provmonthlen = 31;}
+					this.m_datevalue += provmonthlen;}
 				provmonthlen = 0;
-				if (this.m_month == 1) {
-					provmonthlen = 31;
-				}
-				if (this.m_month == 2) {
-					if (leapyear(this.m_year)) {
-						provmonthlen = 29;
-					} else {
-						provmonthlen = 28;
-					}
-				}
-				if (this.m_month == 3) {
-					provmonthlen = 31;
-				}
-				if (this.m_month == 4) {
-					provmonthlen = 30;
-				}
-				if (this.m_month == 5) {
-					provmonthlen = 31;
-				}
-				if (this.m_month == 6) {
-					provmonthlen = 30;
-				}
-				if (this.m_month == 7) {
-					provmonthlen = 31;
-				}
-				if (this.m_month == 8) {
-					provmonthlen = 31;
-				}
-				if (this.m_month == 9) {
-					provmonthlen = 30;
-				}
-				if (this.m_month == 10) {
-					provmonthlen = 31;
-				}
-				if (this.m_month == 11) {
-					provmonthlen = 30;
-				}
-				if (this.m_month == 12) {
-					provmonthlen = 31;
-				}
-				if (this.m_day <= provmonthlen) {
-					this.m_datevalue += (this.m_day - 1);
-				} else {
-					alert(this.m_day + " This is not a valid day of the month.");
-				}
-				this.m_datevalue += (this.m_hour / 24 + this.m_minute / 1440 + this.m_second / 86400);
-			}
+			
+			
+				if (this.m_month == 1) {provmonthlen = 31;}
+				if (this.m_month == 2) {if (leapyear(this.m_year)) {provmonthlen = 29;} else {provmonthlen = 28;}}
+				if (this.m_month == 3) {provmonthlen = 31;}
+				if (this.m_month == 4) {provmonthlen = 30;}
+				if (this.m_month == 5) {provmonthlen = 31;}
+				if (this.m_month == 6) {provmonthlen = 30;}
+				if (this.m_month == 7) {provmonthlen = 31;}
+				if (this.m_month == 8) {provmonthlen = 31;}
+				if (this.m_month == 9) {provmonthlen = 30;}
+				if (this.m_month == 10) {provmonthlen = 31;}
+				if (this.m_month == 11) {provmonthlen = 30;}
+				if (this.m_month == 12) {provmonthlen = 31;}
+				if (this.m_day <= provmonthlen) {this.m_datevalue += (this.m_day - 1);} else {} this.m_datevalue += (this.m_hour / 24 + this.m_minute / 1440 + this.m_second / 86400);}
+				this.p_actualize = act;
 
-			this.p_actualize = act;
-
-			function act() {
-				if (this.m_concept == 1) {
-					ara = new Date();
-					this.m_year = ara.getFullYear();
-					this.m_month = ara.getMonth() + 1;
+			function act() {if (this.m_concept == 1) {ara = new Date(); this.m_year = ara.getFullYear();this.m_month = ara.getMonth() + 1;
 					this.m_day = ara.getDate();
 					this.m_hour = ara.getHours();
 					this.m_minute = ara.getMinutes();
@@ -204,11 +132,11 @@
 
 		/////CONSTRUCTOR DE L'OBJECTE NOMES S'USA UN COP//////////
 		function timecalculator() {
-				this.m_timecalcactual = new timecalc(0, 0, 0, 0, 0, 0, 1);
+				this.m_timecalcactual = new timecalc(2015, 1, 22, 0, 0, 0, 1);
 
-				this.m_timecalcrecent = new timecalc(0, 0, 0, 0, 0, 0, 1);
+				this.m_timecalcrecent = new timecalc(2015, 0, 0, 0, 0, 0, 1);
 				this.m_timecalcrecent.p_actualize();
-				this.m_timecalcold = new timecalc(2000, 1, 1, 0, 0, 0, 0);
+				this.m_timecalcold = new timecalc(2015, 2, 22, 1, 0, 0, 0);
 				this.m_timecalcold.p_actualize();
 				this.m_MainTimer = 0;
 				this.m_TimeDifference = 0;
@@ -216,8 +144,7 @@
 				this.m_years_Dif = 0;
 				this.m_months_Dif = 0;
 				this.m_days_Dif = 0;
-				this.m_window_text = "";
-			}
+				}
 			/////////////FI DEL CONSTRUCTOR//////////////////
 
 		function looking() {
@@ -225,160 +152,31 @@
 				True_Timecalculator.m_timecalcrecent.p_actualize();
 				True_Timecalculator.m_timecalcold.p_actualize();
 
-				document.timecalc.recentyear.value = True_Timecalculator.m_timecalcrecent.m_year;
 				document.timecalc.recentmonth.selectedIndex = True_Timecalculator.m_timecalcrecent.m_month - 1;
 				document.timecalc.recentday.selectedIndex = True_Timecalculator.m_timecalcrecent.m_day - 1;
 				document.timecalc.recenthour.selectedIndex = True_Timecalculator.m_timecalcrecent.m_hour;
 				document.timecalc.recentminute.selectedIndex = True_Timecalculator.m_timecalcrecent.m_minute;
 				document.timecalc.recentsecond.selectedIndex = True_Timecalculator.m_timecalcrecent.m_second;
-				document.timecalc.recentyear.style.background = "white";
-				document.timecalc.recentmonth.style.background = "white";
-				document.timecalc.recentday.style.background = "white";
-				document.timecalc.recenthour.style.background = "white";
-				document.timecalc.recentminute.style.background = "white";
-				document.timecalc.recentsecond.style.background = "white";
-				document.timecalc.upperyeardownbutton.disabled = true;
-				document.timecalc.recentyear.disabled = true;
-				document.timecalc.upperyearupbutton.disabled = true;
-				document.timecalc.uppermonthdownbutton.disabled = true;
-				document.timecalc.recentmonth.disabled = true;
-				document.timecalc.uppermonthupbutton.disabled = true;
-				document.timecalc.upperdaydownbutton.disabled = true;
-				document.timecalc.recentday.disabled = true;
-				document.timecalc.upperdayupbutton.disabled = true;
-				document.timecalc.upperhourdownbutton.disabled = true;
-				document.timecalc.recenthour.disabled = true;
-				document.timecalc.upperhourupbutton.disabled = true;
-				document.timecalc.upperminutedownbutton.disabled = true;
-				document.timecalc.recentminute.disabled = true;
-				document.timecalc.upperminuteupbutton.disabled = true;
-				document.timecalc.upperseconddownbutton.disabled = true;
-				document.timecalc.recentsecond.disabled = true;
-				document.timecalc.uppersecondupbutton.disabled = true;
-			} else {
-				True_Timecalculator.m_timecalcactual.p_actualize();
-				document.timecalc.upperyeardownbutton.disabled = false;
-				document.timecalc.recentyear.disabled = false;
-				document.timecalc.upperyearupbutton.disabled = false;
-				document.timecalc.uppermonthdownbutton.disabled = false;
-				document.timecalc.recentmonth.disabled = false;
-				document.timecalc.uppermonthupbutton.disabled = false;
-				document.timecalc.upperdaydownbutton.disabled = false;
-				document.timecalc.recentday.disabled = false;
-				document.timecalc.upperdayupbutton.disabled = false;
-				document.timecalc.upperhourdownbutton.disabled = false;
-				document.timecalc.recenthour.disabled = false;
-				document.timecalc.upperhourupbutton.disabled = false;
-				document.timecalc.upperminutedownbutton.disabled = false;
-				document.timecalc.recentminute.disabled = false;
-				document.timecalc.upperminuteupbutton.disabled = false;
-				document.timecalc.upperseconddownbutton.disabled = false;
-				document.timecalc.recentsecond.disabled = false;
-				document.timecalc.uppersecondupbutton.disabled = false;
-
-				if (True_Timecalculator.m_timecalcrecent.m_datevalue > True_Timecalculator.m_timecalcactual.m_datevalue) {
-					document.timecalc.recentyear.style.background = "#99FF99";
-					document.timecalc.recentmonth.style.background = "#99FF99";
-					document.timecalc.recentday.style.background = "#99FF99";
-					document.timecalc.recenthour.style.background = "#99FF99";
-					document.timecalc.recentminute.style.background = "#99FF99";
-					document.timecalc.recentsecond.style.background = "#99FF99";
-				} else {
-					if (True_Timecalculator.m_timecalcrecent.m_datevalue < True_Timecalculator.m_timecalcactual.m_datevalue) {
-						document.timecalc.recentyear.style.background = "#99CC99";
-						document.timecalc.recentmonth.style.background = "#99CC99";
-						document.timecalc.recentday.style.background = "#99CC99";
-						document.timecalc.recenthour.style.background = "#99CC99";
-						document.timecalc.recentminute.style.background = "#99CC99";
-						document.timecalc.recentsecond.style.background = "#99CC99";
-					} else {
-						document.timecalc.recentyear.style.background = "white";
-						document.timecalc.recentmonth.style.background = "white";
-						document.timecalc.recentday.style.background = "white";
-						document.timecalc.recenthour.style.background = "white";
-						document.timecalc.recentminute.style.background = "white";
-						document.timecalc.recentsecond.style.background = "white";
-					}
-				}
+				
+			} else {True_Timecalculator.m_timecalcactual.p_actualize();
+				if (True_Timecalculator.m_timecalcrecent.m_datevalue > True_Timecalculator.m_timecalcactual.m_datevalue) {} else {if (True_Timecalculator.m_timecalcrecent.m_datevalue < True_Timecalculator.m_timecalcactual.m_datevalue) {} else {}}
 			}
 
 			if (True_Timecalculator.m_timecalcold.m_concept == 1) {
 				True_Timecalculator.m_timecalcrecent.p_actualize();
 				True_Timecalculator.m_timecalcold.p_actualize();
-				document.timecalc.oldyear.value = True_Timecalculator.m_timecalcold.m_year;
-				document.timecalc.oldmonth.selectedIndex = True_Timecalculator.m_timecalcold.m_month - 1;
-				document.timecalc.oldday.selectedIndex = True_Timecalculator.m_timecalcold.m_day - 1;
+				document.timecalc.oldmonth.selectedIndex = 2;
+				document.timecalc.oldday.selectedIndex = 22;
 				document.timecalc.oldhour.selectedIndex = True_Timecalculator.m_timecalcold.m_hour;
 				document.timecalc.oldminute.selectedIndex = True_Timecalculator.m_timecalcold.m_minute;
 				document.timecalc.oldsecond.selectedIndex = True_Timecalculator.m_timecalcold.m_second;
-				document.timecalc.oldyear.style.background = "white";
-				document.timecalc.oldmonth.style.background = "white";
-				document.timecalc.oldday.style.background = "white";
-				document.timecalc.oldhour.style.background = "white";
-				document.timecalc.oldminute.style.background = "white";
-				document.timecalc.oldsecond.style.background = "white";
-				document.timecalc.downyeardownbutton.disabled = true;
-				document.timecalc.oldyear.disabled = true;
-				document.timecalc.downyearupbutton.disabled = true;
-				document.timecalc.downmonthdownbutton.disabled = true;
-				document.timecalc.oldmonth.disabled = true;
-				document.timecalc.downmonthupbutton.disabled = true;
-				document.timecalc.downdaydownbutton.disabled = true;
-				document.timecalc.oldday.disabled = true;
-				document.timecalc.downdayupbutton.disabled = true;
-				document.timecalc.downhourdownbutton.disabled = true;
-				document.timecalc.oldhour.disabled = true;
-				document.timecalc.downhourupbutton.disabled = true;
-				document.timecalc.downminutedownbutton.disabled = true;
-				document.timecalc.oldminute.disabled = true;
-				document.timecalc.downminuteupbutton.disabled = true;
-				document.timecalc.downseconddownbutton.disabled = true;
-				document.timecalc.oldsecond.disabled = true;
-				document.timecalc.downsecondupbutton.disabled = true;
 			} else {
-				True_Timecalculator.m_timecalcactual.p_actualize();
-				document.timecalc.downyeardownbutton.disabled = false;
-				document.timecalc.oldyear.disabled = false;
-				document.timecalc.downyearupbutton.disabled = false;
-				document.timecalc.downmonthdownbutton.disabled = false;
-				document.timecalc.oldmonth.disabled = false;
-				document.timecalc.downmonthupbutton.disabled = false;
-				document.timecalc.downdaydownbutton.disabled = false;
-				document.timecalc.oldday.disabled = false;
-				document.timecalc.downdayupbutton.disabled = false;
-				document.timecalc.downhourdownbutton.disabled = false;
-				document.timecalc.oldhour.disabled = false;
-				document.timecalc.downhourupbutton.disabled = false;
-				document.timecalc.downminutedownbutton.disabled = false;
-				document.timecalc.oldminute.disabled = false;
-				document.timecalc.downminuteupbutton.disabled = false;
-				document.timecalc.downseconddownbutton.disabled = false;
-				document.timecalc.oldsecond.disabled = false;
-				document.timecalc.downsecondupbutton.disabled = false;
 
 				if (True_Timecalculator.m_timecalcold.m_datevalue > True_Timecalculator.m_timecalcactual.m_datevalue) {
-					document.timecalc.oldyear.style.background = "#99FF99";
-					document.timecalc.oldmonth.style.background = "#99FF99";
-					document.timecalc.oldday.style.background = "#99FF99";
-					document.timecalc.oldhour.style.background = "#99FF99";
-					document.timecalc.oldminute.style.background = "#99FF99";
-					document.timecalc.oldsecond.style.background = "#99FF99";
+					
 				} else {
 					if (True_Timecalculator.m_timecalcold.m_datevalue < True_Timecalculator.m_timecalcactual.m_datevalue) {
-						document.timecalc.oldyear.style.background = "#99CC99";
-						document.timecalc.oldmonth.style.background = "#99CC99";
-						document.timecalc.oldday.style.background = "#99CC99";
-						document.timecalc.oldhour.style.background = "#99CC99";
-						document.timecalc.oldminute.style.background = "#99CC99";
-						document.timecalc.oldsecond.style.background = "#99CC99";
-					} else {
-						document.timecalc.oldyear.style.background = "white";
-						document.timecalc.oldmonth.style.background = "white";
-						document.timecalc.oldday.style.background = "white";
-						document.timecalc.oldhour.style.background = "white";
-						document.timecalc.oldminute.style.background = "white";
-						document.timecalc.oldsecond.style.background = "white";
-					}
+					} else {}
 				}
 			}
 
@@ -503,7 +301,7 @@
 			}
 			yearsDif = newerdate.m_year - olderdate.m_year - enportouna;
 
-			True_Timecalculator.m_window_text = "\n\n The countdown is: \n\n ";
+			True_Timecalculator.m_window_text = "\n         ----------------------------------- \n        ";
 
 			if (yearsDif != 1) {
 				True_Timecalculator.m_window_text += yearsDif + " years ";
@@ -557,7 +355,7 @@
 				var auxhours = 24 * (True_Timecalculator.m_TimeDifference) + 0.0000001;
 				var auxminutes = 60 * 24 * (True_Timecalculator.m_TimeDifference) + 0.0000001;
 				var auxseconds = Math.round(60 * 60 * 24 * (True_Timecalculator.m_TimeDifference));
-				True_Timecalculator.m_window_text += "\n\n     or  " + thousandizator(auxyears, 1);
+				True_Timecalculator.m_window_text += "\n         ----------------------------------- \n    or  " + thousandizator(auxyears, 1);
 				if (Math.floor(auxyears) != 1) {
 					True_Timecalculator.m_window_text += " years";
 				} else {
@@ -601,12 +399,9 @@
 				}
 
 				if (True_Timecalculator.m_OldTimeDifference > True_Timecalculator.m_TimeDifference) {
-					document.timecalc.resultarea.value = " countdown to: " + (document.timecalc.recentmonth.selectedIndex + 1) + "/" + (document.timecalc.recentday.selectedIndex + 1) + "/" + document.timecalc.recentyear.value + " at: " + document.timecalc.recenthour.selectedIndex + " hr " + document.timecalc.recentminute.selectedIndex + " min " + document.timecalc.recentsecond.selectedIndex + " sec ";
-					document.timecalc.resultarea.value += "\n from: . . . . . .  " + (document.timecalc.oldmonth.selectedIndex + 1) + "/" + (document.timecalc.oldday.selectedIndex + 1) + "/" + document.timecalc.oldyear.value + " at: " + document.timecalc.oldhour.selectedIndex + " hr " + document.timecalc.oldminute.selectedIndex + " min " + document.timecalc.oldsecond.selectedIndex + " sec ";
-					document.timecalc.resultarea.value += True_Timecalculator.m_window_text;
 				} else {
-					document.timecalc.resultarea.value = " elapsed time to: " + (document.timecalc.recentmonth.selectedIndex + 1) + "/" + (document.timecalc.recentday.selectedIndex + 1) + "/" + document.timecalc.recentyear.value + " at: " + document.timecalc.recenthour.selectedIndex + " hr " + document.timecalc.recentminute.selectedIndex + " min " + document.timecalc.recentsecond.selectedIndex + " sec ";
-					document.timecalc.resultarea.value += "\n from: . . . . . . . .  " + (document.timecalc.oldmonth.selectedIndex + 1) + "/" + (document.timecalc.oldday.selectedIndex + 1) + "/" + document.timecalc.oldyear.value + " at: " + document.timecalc.oldhour.selectedIndex + " hr " + document.timecalc.oldminute.selectedIndex + " min " + document.timecalc.oldsecond.selectedIndex + " sec ";
+					document.timecalc.resultarea.value = (document.timecalc.recentmonth.selectedIndex + 1) + (document.timecalc.recentday.selectedIndex + 1)
+					document.timecalc.resultarea.value += (document.timecalc.oldmonth.selectedIndex + 1) + (document.timecalc.oldday.selectedIndex + 1) 
 					document.timecalc.resultarea.value += True_Timecalculator.m_window_text;
 				}
 			} else {
@@ -620,7 +415,6 @@
 				var auxhours = 24 * (True_Timecalculator.m_TimeDifference + 0.0000001);
 				var auxminutes = 60 * 24 * (True_Timecalculator.m_TimeDifference) + 0.0000001;
 				var auxseconds = Math.round(60 * 60 * 24 * (True_Timecalculator.m_TimeDifference));
-				True_Timecalculator.m_window_text += "\n\n     or  " + thousandizator(auxyears, 1);
 				if (Math.floor(auxyears) != 1) {
 					True_Timecalculator.m_window_text += " years";
 				} else {
@@ -664,13 +458,7 @@
 					True_Timecalculator.m_window_text += " second";
 				}
 				if (True_Timecalculator.m_OldTimeDifference > True_Timecalculator.m_TimeDifference) {
-					document.timecalc.resultarea.value = " countdown to: " + (document.timecalc.oldmonth.selectedIndex + 1) + "/" + (document.timecalc.oldday.selectedIndex + 1) + "/" + document.timecalc.oldyear.value + " at: " + document.timecalc.oldhour.selectedIndex + " hr " + document.timecalc.oldminute.selectedIndex + " min " + document.timecalc.oldsecond.selectedIndex + " sec ";
-					document.timecalc.resultarea.value += "\n from: . . . . . .  " + (document.timecalc.recentmonth.selectedIndex + 1) + "/" + (document.timecalc.recentday.selectedIndex + 1) + "/" + document.timecalc.recentyear.value + " at: " + document.timecalc.recenthour.selectedIndex + " hr " + document.timecalc.recentminute.selectedIndex + " min " + document.timecalc.recentsecond.selectedIndex + " sec ";
-					document.timecalc.resultarea.value += True_Timecalculator.m_window_text;
 				} else {
-					document.timecalc.resultarea.value = " elapsed time to: " + (document.timecalc.oldmonth.selectedIndex + 1) + "/" + (document.timecalc.oldday.selectedIndex + 1) + "/" + document.timecalc.oldyear.value + " at: " + document.timecalc.oldhour.selectedIndex + " hr " + document.timecalc.oldminute.selectedIndex + " min " + document.timecalc.oldsecond.selectedIndex + " sec ";
-					document.timecalc.resultarea.value += "\n from: . . . . . . . .  " + (document.timecalc.recentmonth.selectedIndex + 1) + "/" + (document.timecalc.recentday.selectedIndex + 1) + "/" + document.timecalc.recentyear.value + " at: " + document.timecalc.recenthour.selectedIndex + " hr " + document.timecalc.recentminute.selectedIndex + " min " + document.timecalc.recentsecond.selectedIndex + " sec ";
-					document.timecalc.resultarea.value += True_Timecalculator.m_window_text;
 				}
 			}
 
@@ -678,7 +466,6 @@
 
 		function updatecalculator() {
 			True_Timecalculator.m_timecalcrecent.m_concept = document.timecalc.recentconcept.selectedIndex;
-			True_Timecalculator.m_timecalcrecent.m_year = document.timecalc.recentyear.value;
 			True_Timecalculator.m_timecalcrecent.m_month = document.timecalc.recentmonth.selectedIndex + 1;
 			True_Timecalculator.m_timecalcrecent.m_day = document.timecalc.recentday.selectedIndex + 1;
 			True_Timecalculator.m_timecalcrecent.m_hour = document.timecalc.recenthour.selectedIndex;
@@ -1142,30 +929,507 @@
 				document.timecalc.oldsecond.selectedIndex = 0;
 			}
 			updatecalculator();
-		}
-	</script>
-	<style>
-		body {
-			text - align: center;
-			color: #FFFFFF;
-			background - color: #000000;
-		}
-	</style>
+		}</script>
 </head>
-
-<body>
-	<p>
-		<h2>It has been:</h2>
+<center style="text-align: center;">
+<body style="background-color: #000000; text-align: center;">
+<form name="timecalc">
+<table style="text-align: center;">
+<tbody style="text-align: center;">
+<tr style="text-align: center;">
+<td style="text-align: center;">
+<font color="red" style="text-align: center;">
+	<p style="background-color: #000000; text-align: center;">
+		<h1 style="background-color: #000000; text-align: center;">IT HAS BEEN</h1>
 	</p>
-    	<p>
-    		<h1>8 months, 1 day, 21 hours, 20 minutes 50 seconds</h1>
-    	</p>
-     or  0.6 years
-     or  8.0 months
-     or  34.8 weeks
-     or  243.8 days
-     or  5,853.3 hours
-     or  351,200.8 minutes
-     or  21,072,050 seconds
+</font>
+<textarea name="resultarea" cols="70" rows="11" style="background-color: #000000; FONT-SIZE: 24px;text-align: center; color: green; FONT-FAMILY: Comic Sans MS; background-color: yellow"> </textarea>
+</td>
+</tr>
+<tr style="text-align: center;" size=1px>
+<td>
+<select name="recentconcept" style="visibility: hidden;" onchange="updatecalculator()">
+<option style="visibility: hidden;">Choose a date:</option>
+<option selected="" style="visibility: hidden;">NOW:</option>
+
+</select>
+</td>
+<td>
+	<input type="button" style="visibility: hidden;" name="upperyeardownbutton" value="" style="visibility: hidden;" onclick="upperyeardown()" > 
+</td>
+<td>
+<input name="recentyear" type="text" size="1" value="" style="visibility: hidden;" onchange="updatecalculator()" >
+</td>
+<td>
+	<input type="button" name="upperyearupbutton" value="" style="visibility: hidden;" onclick="upperyearup()" >
+</td>
+<td>
+	<input type="button" name="uppermonthdownbutton" value="" style="visibility: hidden;" onclick="uppermonthdown()" > 
+</td>
+<td>
+<select name="recentmonth" style="visibility: hidden;" onchange="updatecalculator()" >
+<option>January</option>
+<option>February</option>
+<option>March</option>
+<option>April</option>
+<option>May</option>
+<option>June</option>
+<option>July</option>
+<option>August</option>
+<option>September</option>
+<option>October</option>
+<option>November</option>
+<option>December</option>
+</select>
+</td>
+<td>
+	<input type="button" name="uppermonthupbutton" value=" > " style="visibility: hidden;" onclick="uppermonthup()" > 
+</td>
+<td>
+<input type="button" name="upperdaydownbutton" value=" " style="visibility: hidden;" onclick="upperdaydown()" > 
+</td>
+<td>
+<select name="recentday" style="visibility: hidden;" onchange="updatecalculator()" >
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+<option>13</option>
+<option>14</option>
+<option>15</option>
+<option>16</option>
+<option>17</option>
+<option>18</option>
+<option>19</option>
+<option>20</option>
+<option>21</option>
+<option>22</option>
+<option>23</option>
+<option>24</option>
+<option>25</option>
+<option>26</option>
+<option>27</option>
+<option>28</option>
+<option>29</option>
+<option>30</option>
+<option>31</option>
+</select>
+</td>
+<td>
+	<input type="button" name="upperdayupbutton" value="" style="visibility: hidden;" onclick="upperdayup()" > 
+</td>
+<td>
+	<input type="button" name="upperhourdownbutton" value="" style="visibility: hidden;" onclick="upperhourdown()" > 
+</td>
+<td>
+<select name="recenthour" style="visibility: hidden;" onchange="updatecalculator()" >
+<option>12 AM</option>
+<option>1 AM</option>
+<option>2 AM</option>
+<option>3 AM</option>
+<option>4 AM</option>
+<option>5 AM</option>
+<option>6 AM</option>
+<option>7 AM</option>
+<option>8 AM</option>
+<option>9 AM</option>
+<option>10 AM</option>
+<option>11 AM</option>
+<option>12 PM</option>
+<option>1 PM</option>
+<option>2 PM</option>
+<option>3 PM</option>
+<option>4 PM</option>
+<option>5 PM</option>
+<option>6 PM</option>
+<option>7 PM</option>
+<option>8 PM</option>
+<option>9 PM</option>
+<option>10 PM</option>
+<option>11 PM</option>
+</select>
+</td>
+<td>
+</td>
+<td>
+<select name="recentminute" style="visibility: hidden;" onchange="updatecalculator()" >
+<option>00 min</option>
+<option>01 min</option>
+<option>02 min</option>
+<option>03 min</option>
+<option>04 min</option>
+<option>05 min</option>
+<option>06 min</option>
+<option>07 min</option>
+<option>08 min</option>
+<option>09 min</option>
+<option>10 min</option>
+<option>11 min</option>
+<option>12 min</option>
+<option>13 min</option>
+<option>14 min</option>
+<option>15 min</option>
+<option>16 min</option>
+<option>17 min</option>
+<option>18 min</option>
+<option>19 min</option>
+<option>20 min</option>
+<option>21 min</option>
+<option>22 min</option>
+<option>23 min</option>
+<option>24 min</option>
+<option>25 min</option>
+<option>26 min</option>
+<option>27 min</option>
+<option>28 min</option>
+<option>29 min</option>
+<option>30 min</option>
+<option>31 min</option>
+<option>32 min</option>
+<option>33 min</option>
+<option>34 min</option>
+<option>35 min</option>
+<option>36 min</option>
+<option>37 min</option>
+<option>38 min</option>
+<option>39 min</option>
+<option>40 min</option>
+<option>41 min</option>
+<option>42 min</option>
+<option>43 min</option>
+<option>44 min</option>
+<option>45 min</option>
+<option>46 min</option>
+<option>47 min</option>
+<option>48 min</option>
+<option>49 min</option>
+<option>50 min</option>
+<option>51 min</option>
+<option>52 min</option>
+<option>53 min</option>
+<option>54 min</option>
+<option>55 min</option>
+<option>56 min</option>
+<option>57 min</option>
+<option>58 min</option>
+<option>59 min</option>
+</select>
+</td>
+<td>
+	<input type="button" name="upperminuteupbutton" value=" > " style="visibility: hidden;" onclick="upperminuteup()" > 
+</td>
+<td>
+	<input type="button" name="upperseconddownbutton" value=" < " style="visibility: hidden;" onclick="upperseconddown()" > 
+</td>
+<td>
+<select name="recentsecond" style="visibility: hidden;" onchange="updatecalculator()" >
+<option>00 sec</option>
+<option>01 sec</option>
+<option>02 sec</option>
+<option>03 sec</option>
+<option>04 sec</option>
+<option>05 sec</option>
+<option>06 sec</option>
+<option>07 sec</option>
+<option>08 sec</option>
+<option>09 sec</option>
+<option>10 sec</option>
+<option>11 sec</option>
+<option>12 sec</option>
+<option>13 sec</option>
+<option>14 sec</option>
+<option>15 sec</option>
+<option>16 sec</option>
+<option>17 sec</option>
+<option>18 sec</option>
+<option>19 sec</option>
+<option>20 sec</option>
+<option>21 sec</option>
+<option>22 sec</option>
+<option>23 sec</option>
+<option>24 sec</option>
+<option>25 sec</option>
+<option>26 sec</option>
+<option>27 sec</option>
+<option>28 sec</option>
+<option>29 sec</option>
+<option>30 sec</option>
+<option>31 sec</option>
+<option>32 sec</option>
+<option>33 sec</option>
+<option>34 sec</option>
+<option>35 sec</option>
+<option>36 sec</option>
+<option>37 sec</option>
+<option>38 sec</option>
+<option>39 sec</option>
+<option>40 sec</option>
+<option>41 sec</option>
+<option>42 sec</option>
+<option>43 sec</option>
+<option>44 sec</option>
+<option>45 sec</option>
+<option>46 sec</option>
+<option>47 sec</option>
+<option>48 sec</option>
+<option>49 sec</option>
+<option>50 sec</option>
+<option>51 sec</option>
+<option>52 sec</option>
+<option>53 sec</option>
+<option>54 sec</option>
+<option>55 sec</option>
+<option>56 sec</option>
+<option>57 sec</option>
+<option>58 sec</option>
+<option>59 sec</option>
+</select>
+</td>
+<td>
+	<input type="button" name="uppersecondupbutton" value="" style="visibility: hidden;" onclick="uppersecondup()" > 
+</td>
+</tr>
+<tr>
+<td>
+<select name="oldconcept" style="visibility: hidden;" onchange="updatecalculator()">
+<option>Choose a date:</option>
+</select>
+</td>
+<td><input type="button" name="downyeardownbutton" value="" style="visibility: hidden;" onclick="loweryeardown()"></td>
+<td>
+<input name="oldyear" type="text" size="6" value="2015" style="visibility: hidden;" onchange="updatecalculator()">
+</td>
+<td><input type="button" name="downyearupbutton" value=" " style="visibility: hidden;" onclick="loweryearup()"></td>
+
+<td><input type="button" name="downmonthdownbutton" value="" style="visibility: hidden;" onclick="downmonthdown()"> </td>
+<td>
+<select name="oldmonth" style="visibility: hidden;" onchange="updatecalculator()">
+<option selected="">January</option>
+<option>February</option>
+<option>March</option>
+<option>April</option>
+<option>May</option>
+<option>June</option>
+<option>July</option>
+<option>August</option>
+<option>September</option>
+<option>October</option>
+<option>November</option>
+<option>December</option>
+</select>
+</td>
+<td><input type="button" name="downmonthupbutton" value=" > " style="visibility: hidden;" onclick="downmonthup()"> </td>
+<td><input type="button" name="downdaydownbutton" value=" < " style="visibility: hidden;" onclick="downdaydown()"> </td>
+<td>
+<select name="oldday" style="visibility: hidden;" onchange="updatecalculator()">
+<option selected="">1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+<option>13</option>
+<option>14</option>
+<option>15</option>
+<option>16</option>
+<option>17</option>
+<option>18</option>
+<option>19</option>
+<option>20</option>
+<option>21</option>
+<option>22</option>
+<option>23</option>
+<option>24</option>
+<option>25</option>
+<option>26</option>
+<option>27</option>
+<option>28</option>
+<option>29</option>
+<option>30</option>
+<option>31</option>
+</select>
+</td>
+<td><input type="button" name="downdayupbutton" value=" > " style="visibility: hidden;" onclick="downdayup()"> </td>
+<td><input type="button" name="downhourdownbutton" value=" < " style="visibility: hidden;" onclick="lowerhourdown()"> </td>
+<td>
+<select name="oldhour" style="visibility: hidden;" onchange="updatecalculator()">
+<option>12 AM</option>
+<option>1 AM</option>
+<option>2 AM</option>
+<option>3 AM</option>
+<option>4 AM</option>
+<option>5 AM</option>
+<option>6 AM</option>
+<option>7 AM</option>
+<option>8 AM</option>
+<option>9 AM</option>
+<option>10 AM</option>
+<option>11 AM</option>
+<option>12 PM</option>
+<option>1 PM</option>
+<option>2 PM</option>
+<option>3 PM</option>
+<option>4 PM</option>
+<option>5 PM</option>
+<option>6 PM</option>
+<option>7 PM</option>
+<option>8 PM</option>
+<option>9 PM</option>
+<option>10 PM</option>
+<option>11 PM</option>
+</select>
+</td>
+<td><input type="button" name="downhourupbutton" value="" style="visibility: hidden;" onclick="lowerhourup()"> </td>
+<td><input type="button" name="downminutedownbutton" value="" style="visibility: hidden;" onclick="lowerminutedown()"> </td>
+<td>
+<select name="oldminute" style="visibility: hidden;" onchange="updatecalculator()">
+<option>00 min</option>
+<option>01 min</option>
+<option>02 min</option>
+<option>03 min</option>
+<option>04 min</option>
+<option>05 min</option>
+<option>06 min</option>
+<option>07 min</option>
+<option>08 min</option>
+<option>09 min</option>
+<option>10 min</option>
+<option>11 min</option>
+<option>12 min</option>
+<option>13 min</option>
+<option>14 min</option>
+<option>15 min</option>
+<option>16 min</option>
+<option>17 min</option>
+<option>18 min</option>
+<option>19 min</option>
+<option>20 min</option>
+<option>21 min</option>
+<option>22 min</option>
+<option>23 min</option>
+<option>24 min</option>
+<option>25 min</option>
+<option>26 min</option>
+<option>27 min</option>
+<option>28 min</option>
+<option>29 min</option>
+<option>30 min</option>
+<option>31 min</option>
+<option>32 min</option>
+<option>33 min</option>
+<option>34 min</option>
+<option>35 min</option>
+<option>36 min</option>
+<option>37 min</option>
+<option>38 min</option>
+<option>39 min</option>
+<option>40 min</option>
+<option>41 min</option>
+<option>42 min</option>
+<option>43 min</option>
+<option>44 min</option>
+<option>45 min</option>
+<option>46 min</option>
+<option>47 min</option>
+<option>48 min</option>
+<option>49 min</option>
+<option>50 min</option>
+<option>51 min</option>
+<option>52 min</option>
+<option>53 min</option>
+<option>54 min</option>
+<option>55 min</option>
+<option>56 min</option>
+<option>57 min</option>
+<option>58 min</option>
+<option>59 min</option>
+</select>
+</td>
+<td><input type="button" name="downminuteupbutton" value=""  size=1px style="visibility: hidden;" onclick="lowerminuteup()"> </td>
+<td><input type="button" name="downseconddownbutton" value=""  size=1px style="visibility: hidden;" onclick="lowerseconddown()"> </td>
+<td>
+<select name="oldsecond" style="visibility: hidden;" size=1px onchange="updatecalculator()">
+<option>00 sec</option>
+<option>01 sec</option>
+<option>02 sec</option>
+<option>03 sec</option>
+<option>04 sec</option>
+<option>05 sec</option>
+<option>06 sec</option>
+<option>07 sec</option>
+<option>08 sec</option>
+<option>09 sec</option>
+<option>10 sec</option>
+<option>11 sec</option>
+<option>12 sec</option>
+<option>13 sec</option>
+<option>14 sec</option>
+<option>15 sec</option>
+<option>16 sec</option>
+<option>17 sec</option>
+<option>18 sec</option>
+<option>19 sec</option>
+<option>20 sec</option>
+<option>21 sec</option>
+<option>22 sec</option>
+<option>23 sec</option>
+<option>24 sec</option>
+<option>25 sec</option>
+<option>26 sec</option>
+<option>27 sec</option>
+<option>28 sec</option>
+<option>29 sec</option>
+<option>30 sec</option>
+<option>31 sec</option>
+<option>32 sec</option>
+<option>33 sec</option>
+<option>34 sec</option>
+<option>35 sec</option>
+<option>36 sec</option>
+<option>37 sec</option>
+<option>38 sec</option>
+<option>39 sec</option>
+<option>40 sec</option>
+<option>41 sec</option>
+<option>42 sec</option>
+<option>43 sec</option>
+<option>44 sec</option>
+<option>45 sec</option>
+<option>46 sec</option>
+<option>47 sec</option>
+<option>48 sec</option>
+<option>49 sec</option>
+<option>50 sec</option>
+<option>51 sec</option>
+<option>52 sec</option>
+<option>53 sec</option>
+<option>54 sec</option>
+<option>55 sec</option>
+<option>56 sec</option>
+<option>57 sec</option>
+<option>58 sec</option>
+<option>59 sec</option>
+</select>
+</td>
+<td><input type="button" name="downsecondupbutton" value="" style="visibility: hidden;" onclick="lowersecondup()"> </td>
+</tr>
+</tbody>
+</table>
+</form>
 </body>
+</center>
 </html>
